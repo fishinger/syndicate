@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/parsley.min.js"></script>
+	<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+	<script src="js/jquery.fancybox.pack.js"></script>
+	<script src="js/waves.min.js"></script>
+	<script src="js/jquery.smoothscroll.js"></script>
+	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="js/jquery.enllax.js"></script>
+	<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="js/html5.js"></script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+	<script src="js/IE9.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header>
+		<div class="container clearfix">
+			<a href="#"><img src="img/logo.jpg" alt="" class="header__logo"></a>
+			<a href='tel:+74954569835' class="header__phone">+7(495) 456 98 35</a>
+			<div class="nav">
+				<ul class="nav__list">
+					<li><a href="#face" class='nav__link'>Концепция</a></li>
+					<li><a href="#" class='nav__link'>Портфолио</a></li>
+					<li><a href="#" class='nav__link'>Команда</a></li>
+					<li><a href="#" class='nav__link'>Вопросы и ответы</a></li>
+					<li><a href="#" class='nav__link'>Блог</a></li>
+					<li><a href="#contacts" class='nav__link'>Контакты</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="section face" data-section='face'>
+			<div class="container face__container">
+				<div class="face__phone animated delay-03">
+					<img src="img/phone.png" width="271" height="563" alt="">
+				</div>
+				<div class="direction">
+					<img src="img/logo-2.png" alt="" class="logo-2 animated fadeIn">
+					<h1 class='title-1 animated fadeIn delay-03'>
+						Нужен эффективный
+						<span class="red">интернет-магазин</span><br>
+						для вашего проекта?
+					</h1>
+					<p class='direction__text animated fadeIn delay-06'>
+						Мы знаем, что Вам нужно. Закажите сайт по инновационной технологии!
+					</p>
+					<p class="direction__text blue animated fadeIn delay-06">
+						Чёткие сроки и фиксированная стоимость!
+					</p>
+					<div class='direction__wrap-btn colored-button animated fadeIn delay-09'>
+						<a href="#" class="btn waves-effect waves-button">Заказать</a>
+					</div>
+				</div>
+			</div>
+			<div class="next-section"></div>
+		</div>
+		<div class="section solution" data-section='solution' data-enllax-ratio="-0.6">
+			<div class="container solution__container">
+				<h2 class="title">Проблемы и наши решения</h2>
+				<div class="wrap-slider">
+					<div class="slider">
+						<div class="slide slider__slide">
+							<div class="slide__left">
+								<img src="img/slide.png" alt="" class="slider__img">
+							</div>
+							<div class="slide__right">
+								<h3 class='slide__title'>
+									Не знаете, как 
+									работать с сайтом после запуска?
+								</h3>
+								<div class="slide__text">
+									Вы получите полный пакет документов по эксплуатации сайта по каждому модулю.
+								</div>
+							</div>
+						</div>
+						<div class="slide slider__slide">
+							<div class="slide__left">
+								<img src="img/slide.png" alt="" class="slider__img">
+							</div>
+							<div class="slide__right">
+								<h3 class='slide__title'>
+									Финансовые разрывы в бюджете из-за затянутых сроков?
+								</h3>
+								<div class="slide__text">
+									Мы гарантируем фиксированные сроки сдачи проекта.
+								</div>
+							</div>
+						</div>
+						<div class="slide slider__slide">
+							<div class="slide__left">
+								<img src="img/slide.png" alt="" class="slider__img">
+							</div>
+							<div class="slide__right">
+								<h3 class='slide__title'>
+									Устали от постоянно растущей сметы?
+								</h3>
+								<div class="slide__text">
+									Закажите продающий сайт 
+									за фиксированную стоимость.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slider-pager pager">
+						<a data-slide-index="0" class="pager__item" href=""></a>
+						<a data-slide-index="1" class="pager__item" href=""></a>
+						<a data-slide-index="2" class="pager__item" href=""></a>
+					</div>
+					<div class="solution__logo">RED<br>SYNDICATE</div>
+				</div>
+				<div class="controls">
+					<span class="controls__prev slider__prev"></span>
+					<span class="controls__text">Проблемы и наши решения</span>
+					<span class="controls__next slider__next"></span>
+				</div>
+			</div>
+			<div class="next-section"></div>
+		</div>
+		<div class="section benefit" data-section='benefit'>
+			<div class="benefit__container">
+				<div class="benefit__left">
+					<img src="img/benefit-img.png" alt="" class='benefit__img'>
+				</div>
+				<div class="benefit__right">
+					<h2 class="title">Вы получаете:</h2>
+					<ul class='marker-list'>
+						<li>Продающий  Интернет-магазин</li>
+						<li>Лицензию «1С-Битрикс: Управление сайтом»</li>
+						<li>Полная настройка вашей почты</li>
+						<li>Детальную техническую спецификацию для азработчиков</li>
+						<li>Инструкции по эксплуатации</li>
+						<li>Рекомендации и помощь в подборе хостинга для проекта</li>
+					</ul>
+					<p class="text italic">
+						Мы тщательно тестируем проект и вряд ли вы сможете найти там недочеты но в течении года мы поправим любую неисправность возникшую по нашей вине.  Мы используем для разработки самую популярную платформу в России, подготавливаем детальную техническую документацию, Вы сможете продолжить развитие проекта с нами или где-то в другом месте.
+					</p>
+				</div>
+			</div>
+			<div class="next-section"></div>
+		</div>
+		<div class="section creating" data-section='creating'>
+			<div class="container">
+				<h2 class="title creating__title">
+					Создание продающего <br>
+					интернет-магазина
+				</h2>
+				<a href="#" class="link creating__link">Узнать подробнее</a>
+				<p class="text creating__text">
+					Мы тщательно тестируем проект и вряд ли вы сможете найти там недочеты но в течении года мы поправим любую неисправность возникшую по нашей вине.  Мы используем для разработки самую популярную платформу в России, подготавливаем детальную техническую документацию, Вы сможете продолжить развитие проекта с нами или где-то в другом месте.
+				</p>
+			</div>
+			<div class="offer">
+				<div class="container offer__container">
+					<div class="offer__item animated delay-05">
+						<i class="offer__ico offer__sr"></i>
+						<div class="offer__title">Срок</div>
+						<div class="offer__value">3 месяца</div>
+					</div>
+					<div class="offer__item animated delay-03">
+						<i class="offer__ico offer__st"></i>
+						<div class="offer__title">Стоимость</div>
+						<div class="offer__value">450 000 руб.</div>
+					</div>
+					<div class="offer__item animated">
+						<i class="offer__ico offer__k"></i>
+						<div class="offer__title">Качество</div>
+						<div class="offer__value">100%</div>
+					</div>
+				</div>
+			</div>
+			<div class='colored-button container creating__btn'>
+				<a href="#" class="btn waves-effect waves-button">Заказать</a>
+			</div>
+			<img src="img/offer-bg.png" alt="" class="creating__img" data-enllax-ratio="0.4" data-enllax-type="foreground">
+			<div class="next-section"></div>
+		</div>
+		<div class="section guarantee" data-section='guarantee' data-enllax-ratio="-0.5">
+			<div class="container">
+				<h2 class="title guarantee__title">Мы гарантируем</h2>
+				<div class="guarantee__list">
+					<div class="guarantee__item">
+						<div class="guarantee__name">
+							Соблюдение сроков и фиксированная стоимость
+						</div>
+						<p class="guarantee__text text">
+							Мы не скажем Вам что-то вроде: «Ой! Мы сможем оценить стоимость и сроки только в процессе (или после этапа по формированию Т.З.), давайте начнем с платежа в 300 000, и посмотрим как пойдут дела».
+						</p>
+					</div>
+					<div class="guarantee__item">
+						<div class="guarantee__name">
+							Даем гарантию 12 месяцев  на выполненные работы
+						</div>
+						<p class="guarantee__text text">
+							Мы тщательно тестируем проект и вряд ли вы сможете найти там недочеты но в течении года мы поправим любую неисправность возникшую по нашей вине. 
+						</p>
+					</div>
+					<div class="guarantee__item">
+						<div class="guarantee__name">
+							Гарантиявозврата денег  за непринятый этап
+						</div>
+						<p class="guarantee__text text">
+							Вы всегда можете вернуть деньги за еще не принятый этап. Мы берем 100% предоплату за каждый этап, но пока работы не выполнены, Вы можете в любой момент забрать деньги.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="next-section"></div>
+		</div>
+		<div class="section job" data-section='job'>
+			<h2 class="title job__title">Как мы работаем</h2>
+			<div class="job__slider">
+				<div class="slide job__slide">
+					<div class="job__number">01</div>
+					<div class="job__content">
+						<div class="job__name">Собираем данные</div>
+						<div class="job__text">
+							Проводим с Вами интервью  и заполняем Бриф
+						</div>
+						<div class="job__count">(5 дней)</div>
+					</div>
+				</div>
+				<div class="slide job__slide">
+					<div class="job__number">02</div>
+					<div class="job__content">
+						<div class="job__name">Проводим встречу</div>
+						<div class="job__text">
+							Чтобы познакомиться лично и обсудить проект. На основании брифа мы предложим Вам оптимальную схему разработки проекта.
+						</div>
+						<div class="job__count">(5 дней)</div>
+					</div>
+				</div>
+				<div class="slide job__slide">
+					<div class="job__number">03</div>
+					<div class="job__content">
+						<div class="job__name">Создаем интерактивный  прототип</div>
+						<div class="job__text">
+							Чтобы познакомиться лично и обсудить проект. На основании брифа мы предложим Вам оптимальную схему разработки проекта.
+						</div>
+						<div class="job__count">(5 дней)</div>
+					</div>
+				</div>
+				<div class="slide job__slide">
+					<div class="job__number">04</div>
+					<div class="job__content">
+						<div class="job__name">Создаем дизайн-макеты и верстку</div>
+						<div class="job__text">
+							Чтобы познакомиться лично и обсудить проект. На основании брифа мы предложим Вам оптимальную схему разработки проекта.
+						</div>
+						<div class="job__count">(5 дней)</div>
+					</div>
+				</div>
+				<div class="slide job__slide">
+					<div class="job__number">04</div>
+					<div class="job__content">
+						<div class="job__name">Создаем дизайн-макеты и верстку</div>
+						<div class="job__text">
+							Чтобы познакомиться лично и обсудить проект. На основании брифа мы предложим Вам оптимальную схему разработки проекта.
+						</div>
+						<div class="job__count">(5 дней)</div>
+					</div>
+				</div>
+				<div class="slide job__slide">
+					<div class="job__number">04</div>
+					<div class="job__content">
+						<div class="job__name">Создаем дизайн-макеты и верстку</div>
+						<div class="job__text">
+							Чтобы познакомиться лично и обсудить проект. На основании брифа мы предложим Вам оптимальную схему разработки проекта.
+						</div>
+						<div class="job__count">(5 дней)</div>
+					</div>
+				</div>
+			</div>
+			<div class="controls job__controls">
+				<span class="controls__prev job__prev"></span>
+				<span class="controls__text">Всего 8 этапов</span>
+				<span class="controls__next job__next"></span>
+			</div>
+			<div class="job__more" data-enllax-ratio="-0.7">
+				<div class="container-big">
+					<p class="text job__left">
+						Поскольку рынок постоянно развивается, мы сформируем 
+						и представим Вам предложения по развитию проекта 
+						и сопровождению, без привязки к нашей компании. <br>
+						<span class="blue">А также Вы получаете нашу поддержку и консультации сроком 
+							на 1 год и возможностью продления.</span>
+					</p>
+					<p class="text job__right">
+						Каждому проекту выделяется персональный менеджер, который контролирует все процессы разработки.
+					</p>
+				</div>
+			</div>
+			<div class="next-section"></div>
+		</div>
+		<div class="section reviews" data-section='reviews' data-enllax-ratio="-0.3">
+			<div class="container-big">
+				<h2 class="title reviews__title">Отзывы</h2>
+				<div class="reviews__slider">
+					<div class="slide review">
+						<div class="review__header">
+							<div class="review__img">
+								<img src="img/review-img.jpg" alt="">
+							</div>
+							<div class="review__tit">
+								<div class="review__name">Дмитрий Масютин</div>
+								<div class="review__post">Генеральный директор интернет-магазина</div>
+								<a href='#' class="review__site">webkamin.ru</a>
+							</div>
+						</div>
+						<div class="review__text custom-scroll">
+							На мой взгляд самое главное для любого заказчика — качественное воплощение его идей. Компания "Красный синдикат" уже реализовала для меня не один интернет магазин, тут я нашел команду, которая взялась за создание бизнес-инструмента, а не воплощение мелких задач. Они не заставляли меня писать детальное техническое задание и расписывать весь функционал проекта. 
+							На мой взгляд самое главное для любого заказчика — качественное воплощение его идей. Компания "Красный синдикат" уже реализовала для меня не один интернет магазин, тут я нашел команду, которая взялась за создание бизнес-инструмента, а не воплощение мелких задач. Они не заставляли меня писать детальное техническое задание и расписывать весь функционал проекта. 
+						</div>
+					</div>
+					<div class="slide review">
+						<div class="review__header">
+							<div class="review__img">
+								<img src="img/review-img.jpg" alt="">
+							</div>
+							<div class="review__tit">
+								<div class="review__name">Дмитрий Масютин</div>
+								<div class="review__post">Генеральный директор интернет-магазина</div>
+								<a href='#' class="review__site">webkamin.ru</a>
+							</div>
+						</div>
+						<div class="review__text custom-scroll">
+							На мой взгляд самое главное для любого заказчика — качественное воплощение его идей. Компания "Красный синдикат" уже реализовала для меня не один интернет магазин, тут я нашел команду, которая взялась за создание бизнес-инструмента, а не воплощение мелких задач. Они не заставляли меня писать детальное техническое задание и расписывать весь функционал проекта. 
+							На мой взгляд самое главное для любого заказчика — качественное воплощение его идей. Компания "Красный синдикат" уже реализовала для меня не один интернет магазин, тут я нашел команду, которая взялась за создание бизнес-инструмента, а не воплощение мелких задач. Они не заставляли меня писать детальное техническое задание и расписывать весь функционал проекта. 
+						</div>
+					</div>
+					<div class="slide review">
+						<div class="review__header">
+							<div class="review__img">
+								<img src="img/review-img.jpg" alt="">
+							</div>
+							<div class="review__tit">
+								<div class="review__name">Дмитрий Масютин</div>
+								<div class="review__post">Генеральный директор интернет-магазина</div>
+								<a href='#' class="review__site">webkamin.ru</a>
+							</div>
+						</div>
+						<div class="review__text custom-scroll">
+							На мой взгляд самое главное для любого заказчика — качественное воплощение его идей. Компания "Красный синдикат" уже реализовала для меня не один интернет магазин, тут я нашел команду, которая взялась за создание бизнес-инструмента, а не воплощение мелких задач. Они не заставляли меня писать детальное техническое задание и расписывать весь функционал проекта. 
+							На мой взгляд самое главное для любого заказчика — качественное воплощение его идей. Компания "Красный синдикат" уже реализовала для меня не один интернет магазин, тут я нашел команду, которая взялась за создание бизнес-инструмента, а не воплощение мелких задач. Они не заставляли меня писать детальное техническое задание и расписывать весь функционал проекта. 
+						</div>
+					</div>
+				</div>
+				<div class="controls reviews__controls">
+					<span class="controls__prev reviews__prev"></span>
+					<span class="controls__text">Отзывы наших клиентов</span>
+					<span class="controls__next reviews__next"></span>
+				</div>
+			</div>
+			<div class="next-section"></div>
+		</div>
+		<div class="section map" data-section='map'>
+			<div id="map"></div>
+			<div class="balloon">
+				<div class="balloon__adr">
+					Москва, г. Зеленоград,  ул. Юности, д.8, офис. 502 и 503.
+				</div>
+				<div>
+					
+				</div>
+				<a href="tel:+74955437653" class="balloon__phone">8 (495) 543-76-53</a>
+				<a href="mailto:info@redsyndicate.ru" class="balloon__email">info@redsyndicate.ru</a>
+			</div>
+		</div>
+		<div class="section contacts" data-section='contacts'>
+			<div class="container contacts__container">
+				<div class="contacts__item">
+					<div class="contacts__title">Созвонимся</div>
+					<a href='tel:+74955437653' class="contacts__val">8 (495) 543-76-53</a>
+					<div class="contacts__text">Ответим на все ваши вопросы или  договоримся о встрече.</div>
+				</div>
+				<div class="contacts__item">
+					<div class="contacts__title">Встретимся</div>
+					<div class="contacts__val">Москва, г. Зеленоград, ул. Юности,  д.8, офис. 502 и 503.</div>
+					<div class="contacts__text">Приезжайте к нам, пообщаемся лично.</div>
+				</div>
+				<div class="contacts__item">
+					<div class="contacts__title">Ответим на письма</div>
+					<a href='mailto:info@redsyndicate.ru' class="contacts__val">info@redsyndicate.ru</a>
+					<div class="contacts__text">В ближайшее время мы ответим вам</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="container footer__container">
+			<div class="footer__copy">&copy; 2016 Красный Синдикат</div>
+			<a href="" class="footer__iesa">Разработано в студии ИЕСА</a>
+			<div class="soc footer__soc">
+				<a href='#' class="soc__item soc_f"></a>
+				<a href='#' class="soc__item soc_v"></a>
+				<a href='#' class="soc__item soc_t"></a>
+				<a href='#' class="soc__item soc_g"></a>
+			</div>
+		</div>
+	</footer>
+	<a href='#' class="message"></a>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

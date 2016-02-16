@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Exo 2 Light';
+    src: url('Exo2Light.eot');
+    src: url('Exo2Light.eot?#iefix') format('embedded-opentype'),
+         url('Exo2Light.woff') format('woff'),
+         url('Exo2Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Exo 2 Medium';
+    src: url('Exo2Medium.eot');
+    src: url('Exo2Medium.eot?#iefix') format('embedded-opentype'),
+         url('Exo2Medium.woff') format('woff'),
+         url('Exo2Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Exo 2 Regular';
+    src: url('Exo2Regular.eot');
+    src: url('Exo2Regular.eot?#iefix') format('embedded-opentype'),
+         url('Exo2Regular.woff') format('woff'),
+         url('Exo2Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'roboto-light';
+    src: url('roboto-light.eot');
+    src: url('roboto-light.eot?#iefix') format('embedded-opentype'),
+         url('roboto-light.woff2') format('woff2'),
+         url('roboto-light.woff') format('woff'),
+         url('roboto-light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'roboto-regular';
+    src: url('roboto-regular.eot');
+    src: url('roboto-regular.eot?#iefix') format('embedded-opentype'),
+         url('roboto-regular.woff2') format('woff2'),
+         url('roboto-regular.woff') format('woff'),
+         url('roboto-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'roboto-medium';
+    src: url('roboto-medium.eot');
+    src: url('roboto-medium.eot?#iefix') format('embedded-opentype'),
+         url('roboto-medium.woff2') format('woff2'),
+         url('roboto-medium.woff') format('woff'),
+         url('roboto-medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'roboto-thin';
+    src: url('roboto-thin.eot');
+    src: url('roboto-thin.eot?#iefix') format('embedded-opentype'),
+         url('roboto-thin.woff2') format('woff2'),
+         url('roboto-thin.woff') format('woff'),
+         url('roboto-thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gogoia-regular';
+    src: url('gogoia-regular.eot');
+    src: url('gogoia-regular.eot?#iefix') format('embedded-opentype'),
+         url('gogoia-regular.woff2') format('woff2'),
+         url('gogoia-regular.woff') format('woff'),
+         url('gogoia-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}

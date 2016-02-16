@@ -1,0 +1,78 @@
+@import "variables";
+@media screen and(max-width: 1320px){
+	main{
+		overflow-x: hidden;
+	}
+	.section{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+@media screen and($md){
+	.face__container:before{
+		height: 700px;
+	}
+	.header__phone{
+		margin-right: 10px;
+	}
+	.header__logo{
+		right: auto;
+		left: 2px;
+		max-width: 70px;
+	}
+	.face__phone{
+		margin-right: 70px;
+	}
+	.container{
+		width: 970px;
+	}
+	.solution__logo{
+		display: none;
+	}
+	.title{
+		font-size: 60px;
+		line-height: 60px;
+	}
+	.benefit__right{
+		padding-left: 30px;
+	}
+	.benefit__img{
+		max-width: 480px;
+	}
+	.benefit__left{
+		display: block;
+		padding-top: 95px;
+	}
+	.benefit__left:before{
+		background-size: contain;
+		width: 850px;
+	}
+	.marker-list{
+		margin-bottom: 15px;
+	}
+	.guarantee__list{
+		margin-left: 0;
+	}
+	.guarantee__item{
+		padding: 0 10px;
+	}
+	.job__content{
+		padding: 0 12px;
+		top: 300px;
+	}
+	.job__left{
+		padding: 0 15px;
+	}
+	.review__tit{
+		padding: 7px 54px 10px 19px;
+	}
+	.balloon{
+		right: 5%;
+	}
+}
+@media screen and($sm){
+	
+}
+@media screen and($xs){
+	
+}

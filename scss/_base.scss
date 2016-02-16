@@ -1,0 +1,104 @@
+/* Some Base CSS Rules */
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: $light;
+	font-weight: 400;
+	background: #1e1d27;
+	overflow-x: hidden;
+	//font-size: 62.5%;
+}
+.container{
+	min-width: 315px;
+}
+
+.clearfix:after,
+.clearfix:before{
+	display: table;
+	content: " ";
+}
+.clearfix:after{
+	clear: both;
+}
+.link{
+	color: #10a2ff;
+	font-size: 18px;
+	text-decoration: underline;
+	&:hover{
+		text-decoration: none;
+	}
+}
+a{
+	text-decoration: none;
+}
+.title{
+	font-family: $roboto-thin;
+	color: white;
+	font-size: 70px;
+	line-height: 70px;
+	margin-top: 0;
+	margin-bottom: 38px;
+	text-align: center;
+	font-weight: 400;
+}
+.delay-03{
+	animation-delay: .3s!important;
+}
+.delay-04{
+	animation-delay: .4s!important;
+}
+.delay-05{
+	animation-delay: .5s!important;
+}
+.delay-06{
+	animation-delay: .6s!important;
+}
+.delay-07{
+	animation-delay: .7s!important;
+}
+.delay-08{
+	animation-delay: .8s!important;
+}
+.delay-09{
+	animation-delay: .9s!important;
+}
+.delay-1{
+	animation-delay: 1s!important;
+}
+.delay-1-1{
+	animation-delay: 1.1s!important;
+}
+.delay-1-2{
+	animation-delay: 1.2s!important;
+}
+.delay-1-3{
+	animation-delay: 1.3s!important;
+}
+.delay-1-4{
+	animation-delay: 1.4s!important;
+}
+.delay-1-5{
+	animation-delay: 1.5s!important;
+}
+.delay-1-6{
+	animation-delay: 1.6s!important;
+}
+.delay-1-7{
+	animation-delay: 1.7s!important;
+}
+.delay-1-8{
+	animation-delay: 1.8s!important;
+}
+.delay-1-9{
+	animation-delay: 1.9s!important;
+}
