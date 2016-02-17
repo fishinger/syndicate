@@ -16,10 +16,9 @@ body {
 	font-weight: 400;
 	background: #1e1d27;
 	overflow-x: hidden;
-	//font-size: 62.5%;
 }
 .container{
-	min-width: 315px;
+	min-width: 280px;
 }
 
 .clearfix:after,
@@ -40,6 +39,40 @@ body {
 }
 a{
 	text-decoration: none;
+}
+button{
+	outline: none;
+	&:focus, &:active{
+		outline: none;
+	}
+}
+input:focus, input:active,
+textarea:focus, textarea:active{
+	outline: none;
+}
+input[type='text'],
+input[type='email'],
+input[type='password']{
+	display: block;
+	width: 100%;
+	height: 47px;
+	border-radius: 47px;
+	padding: 0 20px;
+	color: black;
+	font-size: 18px;
+	line-height: 30px;
+	border: 1px solid #a1a1a1;
+	&.parsley-error{
+		border-color: #e61e38;
+	}
+}
+textarea{
+	border-radius: 10px;
+	color: black;
+	font-size: 18px;
+	line-height: 26px;
+	border: 1px solid #a1a1a1;
+	resize: none;
 }
 .title{
 	font-family: $roboto-thin;
@@ -103,5 +136,11 @@ a{
 	animation-delay: 1.9s!important;
 }
 .visible-sm{
+	display: none;
+}
+.visible-xs{
+	display: none;
+}
+.visible-xs{
 	display: none;
 }

@@ -106,6 +106,8 @@
 	height: 32px;
 	cursor: pointer;
 	z-index: 8040;
+	background: 0 0!important;
+	transition: all .4s;
 	&:after{
 		content: '';
 		position: absolute;
@@ -128,6 +130,9 @@
 		transform: rotate(-45deg) translateX(-50%);
 		left: 50%;
 		transition: all .3s;
+	}
+	&:hover{
+		transform: rotate(180deg);
 	}
 }
 

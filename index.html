@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Document</title>
+	<title>Red Syndicate</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="js/parsley.min.js"></script>
@@ -13,6 +13,7 @@
 	<script src="js/jquery.smoothscroll.js"></script>
 	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="js/jquery.enllax.js"></script>
+	<script src="js/jquery.maskedinput.js"></script>
 	<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<!--[if lt IE 9]>
 	<script type="text/javascript" src="js/html5.js"></script>
@@ -26,39 +27,46 @@
 		<div class="container header__container clearfix">
 			<a href="#"><img src="img/logo.jpg" alt="" class="header__logo"></a>
 			<a href='tel:+74954569835' class="header__phone">+7(495) 456 98 35</a>
+			<button class="burger"></button>
 			<div class="nav">
+				<button class="nav__close"></button>
 				<ul class="nav__list">
 					<li><a href="#face" class='nav__link'>Концепция</a></li>
 					<li><a href="#" class='nav__link'>Портфолио</a></li>
 					<li><a href="#" class='nav__link'>Команда</a></li>
 					<li><a href="#" class='nav__link'>Вопросы и ответы</a></li>
 					<li><a href="#" class='nav__link'>Блог</a></li>
-					<li><a href="#contacts" class='nav__link'>Контакты</a></li>
+					<li><a href="#contacts" class='nav__link nav_link_this'>Контакты</a></li>
+					<!-- класс nav_link_this для ссылок ведущих на секции данной страницы -->
 				</ul>
+				<a href='#message' class="message nav__message open-popup"></a>
 			</div>
 		</div>
 	</header>
 	<main>
 		<div class="section face" data-section='face'>
 			<div class="container face__container">
+				<div class='direction__wrap-btn colored-button animated fadeIn delay-09 visible-xs'>
+					<a href="#message" class="btn waves-effect waves-button open-popup">Заказать</a>
+				</div>
 				<div class="face__phone animated delay-03">
 					<img src="img/phone.png" width="271" height="563" alt="">
 				</div>
 				<div class="direction">
 					<img src="img/logo-2.png" alt="" class="logo-2 animated fadeIn">
-					<h1 class='title-1 animated fadeIn delay-03'>
+					<h1 class='title-1 direction__title animated fadeIn delay-03'>
 						Разработка
 						<span class="red">интернет-магазина</span><br>
 						с максимальной конверсией под цели Вашего бизнеса.
 					</h1>
 					<p class='direction__text animated fadeIn delay-06'>
-						Мы знаем, что Вам нужно. Закажите сайт по инновационной технологии!
+						Мы знаем, что Вам нужно. <br>Закажите сайт по инновационной технологии!
 					</p>
 					<p class="direction__text blue animated fadeIn delay-06">
 						Чёткие сроки и фиксированная стоимость!
 					</p>
-					<div class='direction__wrap-btn colored-button animated fadeIn delay-09'>
-						<a href="#" class="btn waves-effect waves-button">Заказать</a>
+					<div class='direction__wrap-btn colored-button animated fadeIn delay-09 hidden-xs'>
+						<a href="#message" class="btn waves-effect waves-button open-popup">Заказать</a>
 					</div>
 				</div>
 			</div>
@@ -71,15 +79,14 @@
 					<div class="slider">
 						<div class="slide slider__slide">
 							<div class="slide__left">
-								<img src="img/slide.png" alt="" class="slider__img">
+								<img src="img/slide-2.png" alt="" class="slider__img">
 							</div>
 							<div class="slide__right">
 								<h3 class='slide__title'>
-									Не знаете, как 
-									работать с сайтом после запуска?
+									Особое внимание финансам, затраченным Вами на проект
 								</h3>
 								<div class="slide__text">
-									Вы получите полный пакет документов по эксплуатации сайта по каждому модулю.
+									Предлагаем разработку за фиксированный бюджет в 450 тыс руб, максимально эффективно используя каждый <br> вложенный рубль.
 								</div>
 							</div>
 						</div>
@@ -89,10 +96,10 @@
 							</div>
 							<div class="slide__right">
 								<h3 class='slide__title'>
-									Финансовые разрывы в бюджете из-за затянутых сроков?
+									Гарантия быстрого запуска.
 								</h3>
 								<div class="slide__text">
-									Мы гарантируем фиксированные сроки сдачи проекта.
+									Мы гарантируем разработку интернет-магазина за 3 месяца, т.к. понимаем, как сроки влияют на Вашу прибыль.
 								</div>
 							</div>
 						</div>
@@ -102,11 +109,23 @@
 							</div>
 							<div class="slide__right">
 								<h3 class='slide__title'>
-									Устали от постоянно растущей сметы?
+									100% качества. 
 								</h3>
 								<div class="slide__text">
-									Закажите продающий сайт 
-									за фиксированную стоимость.
+									Профессиональное тестирование проекта и гарантийная поддержка в течение целого года после запуска.
+								</div>
+							</div>
+						</div>
+						<div class="slide slider__slide">
+							<div class="slide__left">
+								<img src="img/slide.png" alt="" class="slider__img">
+							</div>
+							<div class="slide__right">
+								<h3 class='slide__title'>
+									Интернет-магазин 	легко поддерживать 		и развивать.
+								</h3>
+								<div class="slide__text">
+									Каждый проект проходит контроль соответствия стандартам 					и сопровождается полной технической 		и эксплуатационной документацией.
 								</div>
 							</div>
 						</div>
@@ -115,6 +134,7 @@
 						<a data-slide-index="0" class="pager__item" href=""></a>
 						<a data-slide-index="1" class="pager__item" href=""></a>
 						<a data-slide-index="2" class="pager__item" href=""></a>
+						<a data-slide-index="3" class="pager__item" href=""></a>
 					</div>
 					<div class="solution__logo">RED<br>SYNDICATE</div>
 				</div>
@@ -145,21 +165,21 @@
 						<img src="img/benefit-img.png" alt="" class='benefit__img-sm'>
 					</div>
 					<p class="text italic">
-						Мы тщательно тестируем проект и вряд ли вы сможете найти там недочеты но в течении года мы поправим любую неисправность возникшую по нашей вине.  Мы используем для разработки самую популярную платформу в России, подготавливаем детальную техническую документацию, Вы сможете продолжить развитие проекта с нами или где-то в другом месте.
+						Мы тщательно тестируем проект и вряд ли вы сможете найти там недочеты но в течении года мы поправим любую неисправность возникшую по нашей вине.  Мы используем для разработки самую популярную платформу в России.
 					</p>
 				</div>
 			</div>
 			<div class="next-section"></div>
 		</div>
 		<div class="section creating" data-section='creating'>
-			<div class="container">
+			<div class="container creating__container">
 				<h2 class="title creating__title">
 					Создание продающего <br>
 					интернет-магазина
 				</h2>
 				<a href="#" class="link creating__link">Узнать подробнее</a>
 				<p class="text creating__text">
-					Мы тщательно тестируем проект и вряд ли вы сможете найти там недочеты но в течении года мы поправим любую неисправность возникшую по нашей вине.  Мы используем для разработки самую популярную платформу в России, подготавливаем детальную техническую документацию, Вы сможете продолжить развитие проекта с нами или где-то в другом месте.
+					Мы тщательно тестируем проект и вряд ли вы сможете найти там недочеты но в течении года мы поправим любую неисправность возникшую по нашей вине.  Мы используем для разработки самую популярную платформу в России.
 				</p>
 			</div>
 			<div class="offer">
@@ -181,8 +201,11 @@
 					</div>
 				</div>
 			</div>
+			<div class="creating__wrap-link">
+				<a href="#" class="link creating__link">Узнать подробнее</a>
+			</div>
 			<div class='colored-button container creating__btn'>
-				<a href="#" class="btn waves-effect waves-button">Заказать</a>
+				<a href="#message" class="btn waves-effect waves-button open-popup">Заказать</a>
 			</div>
 			<img src="img/offer-bg.png" alt="" class="creating__img" data-enllax-ratio="0.4" data-enllax-type="foreground">
 			<div class="next-section"></div>
@@ -359,7 +382,7 @@
 				</div>
 				<div class="controls reviews__controls">
 					<span class="controls__prev reviews__prev"></span>
-					<span class="controls__text">Отзывы наших клиентов</span>
+					<div class="controls__text"><span class='reviews__count'></span> Отзыва</div>
 					<span class="controls__next reviews__next"></span>
 				</div>
 			</div>
@@ -412,7 +435,39 @@
 			</div>
 		</div>
 	</footer>
-	<a href='#' class="message"></a>
+	<div class="popup" id='message'>
+		<h2 class="popup__tetle">Заголовок</h2>
+		<form   action=""
+				role="form"
+				data-parsley-validate 
+				data-parsley-required-message="Поле обязательно для заполнения">
+			<div class="popup__content">
+				<div class="popup__left">
+					<div class="wrap-control">
+						<input type="text" class="form-control" placeholder="Ваше имя" data-parsley-required>
+					</div>
+					<div class="wrap-control">
+						<input type="text" class="form-control mask-phone" placeholder="Телефон" data-parsley-required>
+					</div>
+					<div class="wrap-control">
+						<input type="email"
+								class="form-control"
+								placeholder="Email"
+								data-parsley-type="email"
+								data-parsley-type-message="Email введен не корректно"
+								data-parsley-required>
+					</div>
+				</div>
+				<div class="popup__right">
+					<textarea name="" class="popup__textarea" placeholder='Ваше сообщение'></textarea>
+				</div>
+			</div>
+			<div class='colored-button'>
+				<button type='submit' class="btn waves-effect waves-button">Отправить</button>
+			</div>
+		</form>
+	</div>
+	<a href='#message' class="message open-popup"></a>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

@@ -1,165 +1,137 @@
 $(document).ready(function(){
-	/*--fancybox--*/
-	// $(".open-popup").fancybox({
- //    	openEffect	: 'elastic',
- //    	closeEffect	: 'elastic',
- //    	scrolling: 'visible',
- //    	padding: 0,
- //    	width: 640,
- //    	helpers : {
- //    		title : {
- //    			type : 'inside'
- //    		}
- //    	}
- //    });
-    /*--end-fancybox--*/
-
+	$(".open-popup").fancybox({
+    	openEffect	: 'elastic',
+    	closeEffect	: 'elastic',
+    	scrolling: 'visible',
+    	padding: 0,
+    	width: 760,
+    	helpers : {
+    		title : {
+    			type : 'inside'
+    		}
+    	}
+    });
+  // Initialise Waves with the config
+  var clickWaves = (function(){
     var config = {
-        // How long Waves effect duration 
-        // when it's clicked (in milliseconds)
         duration: 500,
-
-        // Delay showing Waves effect on touch
-        // and hide the effect if user scrolls
-        // (0 to disable delay) (in milliseconds)
         delay: 200
     };
-                    
-    // Initialise Waves with the config
     Waves.init(config);
-
-    $('.slider').bxSlider({
-      mode: 'horizontal',
-      nextSelector: ".slider__next",
-      prevSelector: ".slider__prev",
-      nextText: "",
-      prevText: "",
-      pagerCustom: '.slider-pager'
-      //captions: true
+  }());
+  $('.slider').bxSlider({
+    mode: 'horizontal',
+    nextSelector: ".slider__next",
+    prevSelector: ".slider__prev",
+    nextText: "",
+    prevText: "",
+    pagerCustom: '.slider-pager'
+  });
+  var scrollbar = (function(){
+    $(".custom-scroll").mCustomScrollbar({
+      contentTouchScroll: true,
+      theme:"theme-scroll"
     });
-    var scrollbar = function(){
-      $(".custom-scroll").mCustomScrollbar({
-        contentTouchScroll: true,
-        theme:"theme-scroll"
-      });
-    }
-    scrollbar();
-    var nextSection = (function(){
-    	var btn = $('.next-section');
-    	btn.on('click', function(e){
-    		e.preventDefault();
-    		var $this = $(this),
-    			section = $this.closest('.section'),
-    			newSection = section.next('.section'),
-    			newPosition = newSection.offset().top + 40;
-    		$('body').animate({'scrollTop' : newPosition}, 700);
-    	})
-    }())
-	// $('.job__slider').bxSlider({
-	// 	slideWidth: 5000,
-	// 	minSlides: 4,
-	// 	maxSlides: 4,
-	// 	slideMargin: 0,
-	// 	infiniteLoop: false,
-	// 	pager: false,
-	// 	nextSelector: ".job__next",
-	// 	prevSelector: ".job__prev",
-	// 	nextText: "",
-	// 	prevText: ""
-	// });
-
-
-  var slider1, slider2, flagSlide = true;
-  var sliders = function(countSlides1, countSlides2){
-    slider1 = $('.job__slider').bxSlider({
-      slideWidth: 5000,
-      minSlides: countSlides1,
-      maxSlides: 4,
-      slideMargin: 0,
-      infiniteLoop: false,
-      pager: false,
-      nextSelector: ".job__next",
-      prevSelector: ".job__prev",
-      nextText: "",
-      prevText: ""
-    }),
-    slider2 = $('.reviews__slider').bxSlider({
-      slideWidth: 5000,
-      minSlides: countSlides2,
-      maxSlides: 2,
-      slideMargin: 60,
-      infiniteLoop: false,
-      pager: false,
-      nextSelector: ".reviews__next",
-      prevSelector: ".reviews__prev",
-      nextText: "",
-      prevText: "",
-      onSliderLoad: function(currentIndex){
-        var slider = $('.reviews__slider'),
-          slide = slider.find('.slide'),
-          count = slide.length,
-          controls = slider.closest('.reviews').find('.controls'),
-          winWidth = $(window).width();
-        if(count < 3 && winWidth > 1000) {
-          controls.hide();
-        } else if(count < 2 && winWidth <= 1000){
-          controls.hide();
-        } else {
-          controls.show();
+  }());
+  var nextSection = (function(){
+  	var btn = $('.next-section');
+  	btn.on('click', function(e){
+  		e.preventDefault();
+  		var $this = $(this),
+  			section = $this.closest('.section'),
+  			newSection = section.next('.section'),
+  			newPosition = newSection.offset().top + 40;
+  		$('body').animate({'scrollTop' : newPosition}, 700);
+  	})
+  }());
+  //слайдеры с динамичным выводом слайдов
+  var slidersInit = (function(){
+    var slider1,
+        slider2,
+        winWidth1 = false,
+        winWidth2 = false,
+        winWidth3 = false;
+    var sliders = function(countSlides1, countSlides2){
+      slider1 = $('.job__slider').bxSlider({
+        slideWidth: 5000,
+        minSlides: countSlides1,
+        maxSlides: 4,
+        slideMargin: 0,
+        infiniteLoop: false,
+        pager: false,
+        nextSelector: ".job__next",
+        prevSelector: ".job__prev",
+        nextText: "",
+        prevText: ""
+      }),
+      slider2 = $('.reviews__slider').bxSlider({
+        slideWidth: 5000,
+        minSlides: countSlides2,
+        maxSlides: 2,
+        slideMargin: 60,
+        infiniteLoop: false,
+        pager: false,
+        nextSelector: ".reviews__next",
+        prevSelector: ".reviews__prev",
+        nextText: "",
+        prevText: "",
+        onSliderLoad: function(currentIndex){
+          var slider = $('.reviews__slider'),
+            slide = slider.find('.slide'),
+            count = slide.length,
+            controls = slider.closest('.reviews').find('.controls'),
+            winWidth = $(window).width(),
+            countBlock = $('.reviews__count');
+          if(count < 3 && winWidth > 1000) {
+            controls.hide();
+          } else if(count < 2 && winWidth <= 1000){
+            controls.hide();
+          } else {
+            controls.show();
+          }
+          countBlock.html(count)
         }
+      });
+    };
+    var showSliders = function(){
+      var winWidtn = $(window).width();
+      if(winWidtn > 1000 && !winWidth1){
+        if(slider1 !== undefined && slider2 !== undefined){
+          slider1.destroySlider();
+          slider2.destroySlider();
+        }
+        sliders(4, 2);
+        winWidth1 = true;
+        winWidth2 = false;
+        winWidth3 = false;
+      } else if(winWidtn <= 1000 && winWidtn > 640 && !winWidth2 ) {
+        if(slider1 !== undefined && slider2 !== undefined){
+          slider1.destroySlider();
+          slider2.destroySlider();
+        } 
+        sliders(2, 1);
+        winWidth1 = false;
+        winWidth2 = true;
+        winWidth3 = false;
+      } else if(winWidtn <= 640 && !winWidth3) {
+        if(slider1 !== undefined && slider2 !== undefined){
+          slider1.destroySlider();
+          slider2.destroySlider();
+        } 
+        sliders(1, 1);
+        winWidth1 = false;
+        winWidth2 = false;
+        winWidth3 = true;
       }
-    });
-  };
-  var showSliders = function(){
-    var winWidtn = $(window).width();
-    if(winWidtn > 1000 && !flagSlide){
-      if(slider1 !== undefined && slider2 !== undefined){
-        slider1.destroySlider();
-        slider2.destroySlider();
-      }
-      sliders(4, 2);
-      flagSlide = true;
-    } else if(winWidtn <= 1000 && flagSlide) {
-      if(slider1 !== undefined && slider2 !== undefined){
-        slider1.destroySlider();
-        slider2.destroySlider();
-      }
-      sliders(2, 1);
-      flagSlide = false;
     }
-  }
-  showSliders();
-  $(window).resize(function(){
     showSliders();
-  })
-
-
-
-	// $('.reviews__slider').bxSlider({
-	// 	slideWidth: 5000,
-	// 	minSlides: 2,
-	// 	maxSlides: 2,
-	// 	slideMargin: 60,
-	// 	infiniteLoop: false,
-	// 	pager: false,
-	// 	nextSelector: ".reviews__next",
-	// 	prevSelector: ".reviews__prev",
-	// 	nextText: "",
-	// 	prevText: "",
-	// 	onSliderLoad: function(currentIndex){
-	// 		var slider = $('.reviews__slider'),
-	// 			slide = slider.find('.slide'),
-	// 			count = slide.length,
-	// 			controls = slider.closest('.reviews').find('.controls');
-	// 		if(count < 3) {
-	// 			controls.hide();
-	// 		}
-	// 	}
-	// });
+    $(window).resize(function(){
+      showSliders();
+    })
+  }());
   var wayp = (function(){
     var showSection = function(section, isAnimate){
         if(section && section !=='#'){
-          console.log(section)
           var
             hasSec = section.replace('#', ''),
             newSec = $('.section').filter('[data-section="' + hasSec + '"]'),
@@ -181,11 +153,11 @@ $(document).ready(function(){
             winScroll = $(window).scrollTop();
           if(topSec < winScroll && botSec > winScroll){
             var secId = $this.data('section'),
-              activLink = $('.nav__link').filter('[href="#' + secId + '"]');
+              activLink = $('.nav_link_this').filter('[href="#' + secId + '"]');
             activLink.addClass('active')
             .closest('li')
             .siblings()
-            .find('.nav__link')
+            .find('.nav_link_this')
             .removeClass('active');
             window.location.hash = secId;
             if(secId === 'creating' && !$this.hasClass('viewed')){
@@ -201,16 +173,42 @@ $(document).ready(function(){
       })
       $(document).ready(function(){
         showSection(window.location.hash, false);
-        $('.nav ul li a').on('click', function(e){
+        $('.nav_link_this').on('click', function(e){
           e.preventDefault();
           showSection($(this).attr('href'), true);
         })
       })
   }());
-  var parallax = function(){
+  var parallax = (function(){
     $(window).enllax();
-  }
-  parallax();
+  }())
+  var openNav = (function(){
+    var btn = $('.burger'),
+      nav = $('.nav');
+    btn.on('click', function(){
+      if (!nav.hasClass('active')) {
+        nav.addClass('active');
+      } else {
+        nav.removeClass('active');
+      }
+    })
+    $('.nav__link, .nav__close, .nav__message').on('click', function(){
+      if (nav.hasClass('active')) {
+        nav.removeClass('active');
+      }
+    })
+    $(document).on('click', function(e){
+        if (!nav.is(e.target) && nav.has(e.target).length === 0 && !btn.is(e.target) && btn.has(e.target).length === 0 ) {
+            if(nav.hasClass('active')){
+               nav.removeClass('active')
+            }
+        }
+    })
+  }());
+  /*маска для ввода телефона*/
+  var maskPhone = (function(){
+   $(".mask-phone").mask("+7(999)-999-99-99");
+  }())
 })
 
 ymaps.ready(function () {
@@ -241,15 +239,9 @@ ymaps.ready(function () {
             ].join('')
         },
         {
-            // Опции.
-            // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
-            // Своё изображение иконки метки.
             iconImageHref: 'img/map-label.png',
-            // Размеры метки.
             iconImageSize: [209, 195],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
             iconImageOffset: [7, -184]
         });
 
