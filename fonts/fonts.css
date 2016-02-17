@@ -26,6 +26,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Exo 2 Thin';
+    src: url('Exo2Thin.eot');
+    src: url('Exo2Thin.eot?#iefix') format('embedded-opentype'),
+         url('Exo2Thin.woff') format('woff'),
+         url('Exo2Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'roboto-light';

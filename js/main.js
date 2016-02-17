@@ -55,39 +55,107 @@ $(document).ready(function(){
     		$('body').animate({'scrollTop' : newPosition}, 700);
     	})
     }())
-	$('.job__slider').bxSlider({
-		slideWidth: 5000,
-		minSlides: 4,
-		maxSlides: 4,
-		slideMargin: 0,
-		infiniteLoop: false,
-		pager: false,
-		nextSelector: ".job__next",
-		prevSelector: ".job__prev",
-		nextText: "",
-		prevText: ""
-	});
-	$('.reviews__slider').bxSlider({
-		slideWidth: 5000,
-		minSlides: 2,
-		maxSlides: 2,
-		slideMargin: 60,
-		infiniteLoop: false,
-		pager: false,
-		nextSelector: ".reviews__next",
-		prevSelector: ".reviews__prev",
-		nextText: "",
-		prevText: "",
-		onSliderLoad: function(currentIndex){
-			var slider = $('.reviews__slider'),
-				slide = slider.find('.slide'),
-				count = slide.length,
-				controls = slider.closest('.reviews').find('.controls');
-			if(count < 3) {
-				controls.hide();
-			}
-		}
-	});
+	// $('.job__slider').bxSlider({
+	// 	slideWidth: 5000,
+	// 	minSlides: 4,
+	// 	maxSlides: 4,
+	// 	slideMargin: 0,
+	// 	infiniteLoop: false,
+	// 	pager: false,
+	// 	nextSelector: ".job__next",
+	// 	prevSelector: ".job__prev",
+	// 	nextText: "",
+	// 	prevText: ""
+	// });
+
+
+  var slider1, slider2, flagSlide = true;
+  var sliders = function(countSlides1, countSlides2){
+    slider1 = $('.job__slider').bxSlider({
+      slideWidth: 5000,
+      minSlides: countSlides1,
+      maxSlides: 4,
+      slideMargin: 0,
+      infiniteLoop: false,
+      pager: false,
+      nextSelector: ".job__next",
+      prevSelector: ".job__prev",
+      nextText: "",
+      prevText: ""
+    }),
+    slider2 = $('.reviews__slider').bxSlider({
+      slideWidth: 5000,
+      minSlides: countSlides2,
+      maxSlides: 2,
+      slideMargin: 60,
+      infiniteLoop: false,
+      pager: false,
+      nextSelector: ".reviews__next",
+      prevSelector: ".reviews__prev",
+      nextText: "",
+      prevText: "",
+      onSliderLoad: function(currentIndex){
+        var slider = $('.reviews__slider'),
+          slide = slider.find('.slide'),
+          count = slide.length,
+          controls = slider.closest('.reviews').find('.controls'),
+          winWidth = $(window).width();
+        if(count < 3 && winWidth > 1000) {
+          controls.hide();
+        } else if(count < 2 && winWidth <= 1000){
+          controls.hide();
+        } else {
+          controls.show();
+        }
+      }
+    });
+  };
+  var showSliders = function(){
+    var winWidtn = $(window).width();
+    if(winWidtn > 1000 && !flagSlide){
+      if(slider1 !== undefined && slider2 !== undefined){
+        slider1.destroySlider();
+        slider2.destroySlider();
+      }
+      sliders(4, 2);
+      flagSlide = true;
+    } else if(winWidtn <= 1000 && flagSlide) {
+      if(slider1 !== undefined && slider2 !== undefined){
+        slider1.destroySlider();
+        slider2.destroySlider();
+      }
+      sliders(2, 1);
+      flagSlide = false;
+    }
+  }
+  showSliders();
+  $(window).resize(function(){
+    showSliders();
+  })
+
+
+
+	// $('.reviews__slider').bxSlider({
+	// 	slideWidth: 5000,
+	// 	minSlides: 2,
+	// 	maxSlides: 2,
+	// 	slideMargin: 60,
+	// 	infiniteLoop: false,
+	// 	pager: false,
+	// 	nextSelector: ".reviews__next",
+	// 	prevSelector: ".reviews__prev",
+	// 	nextText: "",
+	// 	prevText: "",
+	// 	onSliderLoad: function(currentIndex){
+	// 		var slider = $('.reviews__slider'),
+	// 			slide = slider.find('.slide'),
+	// 			count = slide.length,
+	// 			controls = slider.closest('.reviews').find('.controls');
+	// 		if(count < 3) {
+	// 			controls.hide();
+	// 		}
+	// 	}
+	// });
   var wayp = (function(){
     var showSection = function(section, isAnimate){
         if(section && section !=='#'){

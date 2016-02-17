@@ -2,6 +2,7 @@
 <html lang="en" ng-app='app'>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Document</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
@@ -22,7 +23,7 @@
 </head>
 <body>
 	<header>
-		<div class="container clearfix">
+		<div class="container header__container clearfix">
 			<a href="#"><img src="img/logo.jpg" alt="" class="header__logo"></a>
 			<a href='tel:+74954569835' class="header__phone">+7(495) 456 98 35</a>
 			<div class="nav">
@@ -46,9 +47,9 @@
 				<div class="direction">
 					<img src="img/logo-2.png" alt="" class="logo-2 animated fadeIn">
 					<h1 class='title-1 animated fadeIn delay-03'>
-						Нужен эффективный
-						<span class="red">интернет-магазин</span><br>
-						для вашего проекта?
+						Разработка
+						<span class="red">интернет-магазина</span><br>
+						с максимальной конверсией под цели Вашего бизнеса.
 					</h1>
 					<p class='direction__text animated fadeIn delay-06'>
 						Мы знаем, что Вам нужно. Закажите сайт по инновационной технологии!
@@ -127,7 +128,7 @@
 		</div>
 		<div class="section benefit" data-section='benefit'>
 			<div class="benefit__container">
-				<div class="benefit__left">
+				<div class="benefit__left hidden-sm">
 					<img src="img/benefit-img.png" alt="" class='benefit__img'>
 				</div>
 				<div class="benefit__right">
@@ -140,6 +141,9 @@
 						<li>Инструкции по эксплуатации</li>
 						<li>Рекомендации и помощь в подборе хостинга для проекта</li>
 					</ul>
+					<div class="benefit_wrap_img">
+						<img src="img/benefit-img.png" alt="" class='benefit__img-sm'>
+					</div>
 					<p class="text italic">
 						Мы тщательно тестируем проект и вряд ли вы сможете найти там недочеты но в течении года мы поправим любую неисправность возникшую по нашей вине.  Мы используем для разработки самую популярную платформу в России, подготавливаем детальную техническую документацию, Вы сможете продолжить развитие проекта с нами или где-то в другом месте.
 					</p>
@@ -396,8 +400,10 @@
 	</main>
 	<footer>
 		<div class="container footer__container">
-			<div class="footer__copy">&copy; 2016 Красный Синдикат</div>
-			<a href="" class="footer__iesa">Разработано в студии ИЕСА</a>
+			<div class="footer__info">
+				<div class="footer__copy">&copy; 2016 Красный Синдикат</div>
+				<a href="" class="footer__iesa">Разработано в студии ИЕСА</a>
+			</div>
 			<div class="soc footer__soc">
 				<a href='#' class="soc__item soc_f"></a>
 				<a href='#' class="soc__item soc_v"></a>

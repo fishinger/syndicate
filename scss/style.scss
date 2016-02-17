@@ -232,6 +232,7 @@ main{
 	line-height: 45px;
 	margin-bottom: 20px;
 	margin-top: 0;
+	font-family: $thin;
 }
 .slide__text{
 	color: black;
@@ -398,6 +399,9 @@ main{
 	z-index: 1;
 	position: relative;
 }
+.benefit__img-sm{
+	display: none;
+}
 .benefit__right{
 	max-width: 600px;
 	padding-left: 43px;
@@ -535,8 +539,9 @@ main{
 .job__title{
 	position: absolute;
 	top: 76px;
-	left: 50%;
-	transform: translateX(-50%);
+	left: 0;
+	right: 0;
+	text-align: center;
 	z-index: 3;
 }
 .job__slide{
@@ -776,20 +781,6 @@ main{
 			margin-bottom: 0;
 		}
 	}
-	@media screen and(max-width: 1530px){
-		
-	}
-	@media screen and($sm){
-		transform: translateX(-50%);
-		top: 70px;
-		margin-left: 0;
-	}
-	@media screen and($xs){
-	    transform: translateX(-50%) scale(0.7);
-	    top: auto;
-	    left: 52%;
-	    bottom: 0;
-	}
 }
 .balloon__phone, .balloon__email{
 	color: white;
@@ -853,12 +844,15 @@ footer{
 .footer__container{
 	@extend .clearfix;
 }
+.footer__info{
+	float: left;
+}
 .footer__copy{
 	font-size: 17px;
 	line-height: 22px;
 	color: #dfdfe0;
 	margin-right: 35px;
-	float: left;
+	display: inline-block;
 	margin-left: 50px;
 }
 .footer__iesa{
@@ -867,7 +861,7 @@ footer{
 	font-size: 16px;
 	line-height: 22px;
 	text-decoration: underline;
-	float: left;
+	display: inline-block;
 	padding-top: 2px;
 	&:hover{
 		text-decoration: none;
