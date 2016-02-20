@@ -55,7 +55,7 @@
             if(type == 'background') {
                 if(dir == 'vertical') {
                     $this.css({
-                        'background-position': 'center ' + -bgY + 'px'
+                        'background-position': '80% ' + -bgY + 'px'
                     });
                 }
                 else if(dir == 'horizontal') {
@@ -82,21 +82,33 @@
             }
             
             $(window).on('scroll', function(){
-                var scrolling = $(this).scrollTop();
+                var scrolling = $(this).scrollTop(),
+                    posX = '';
 
                 if($this.hasClass('reviews') || $this.hasClass('solution')){
                     bgY = Math.round((offset - scrolling) * ratio) - 20;
                 } else  {
                     bgY = Math.round((offset - scrolling) * ratio) + 180;
                 }
-                
-                
+
+                if($this.hasClass('solution')){
+                    posX = '80%';
+                } else if($this.hasClass('guarantee')){
+                    posX = '30%'
+                } else if($this.hasClass('job__more')){
+                    posX = '84%'
+                } else if($this.hasClass('reviews')){
+                    posX = '18%'
+                } else {
+                    posX = 'center'
+                }
+
                 transform = Math.round(((offset - (winHeight / 2) + height) - scrolling) * ratio);
                 
                 if(type == 'background') {
                     if(dir == 'vertical') {
                         $this.css({
-                            'background-position': 'center ' + -bgY + 'px'
+                            'background-position': posX + ' ' + -bgY + 'px'
                         });
                     }
                     else if(dir == 'horizontal') {

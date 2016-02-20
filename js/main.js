@@ -1,16 +1,17 @@
 $(document).ready(function(){
 	$(".open-popup").fancybox({
-    	openEffect	: 'elastic',
-    	closeEffect	: 'elastic',
-    	scrolling: 'visible',
-    	padding: 0,
-    	width: 760,
-    	helpers : {
-    		title : {
-    			type : 'inside'
-    		}
-    	}
-    });
+  	openEffect	: 'elastic',
+  	closeEffect	: 'elastic',
+  	scrolling: 'visible',
+  	padding: 0,
+  	width: 760,
+    height: 'auto',
+  	helpers : {
+  		title : {
+  			type : 'inside'
+  		}
+  	}
+  });
   // Initialise Waves with the config
   var clickWaves = (function(){
     var config = {
@@ -25,6 +26,8 @@ $(document).ready(function(){
     prevSelector: ".slider__prev",
     nextText: "",
     prevText: "",
+    auto: true,
+    autoHover: true,
     pagerCustom: '.slider-pager'
   });
   var scrollbar = (function(){
@@ -36,12 +39,15 @@ $(document).ready(function(){
   var nextSection = (function(){
   	var btn = $('.next-section');
   	btn.on('click', function(e){
-  		e.preventDefault();
   		var $this = $(this),
   			section = $this.closest('.section'),
   			newSection = section.next('.section'),
-  			newPosition = newSection.offset().top + 40;
-  		$('body').animate({'scrollTop' : newPosition}, 700);
+  			newPosition = newSection.offset().top,
+        winWidth = $(window).width();
+      if(winWidth >= 640 && winWidth < 1000){
+        newPosition -= 45;
+      }
+  		$('body, html').animate({'scrollTop' : newPosition}, 700);
   	})
   }());
   //слайдеры с динамичным выводом слайдов
@@ -100,7 +106,9 @@ $(document).ready(function(){
           slider1.destroySlider();
           slider2.destroySlider();
         }
-        sliders(4, 2);
+        setTimeout(function(){
+          sliders(4, 2);
+        }, 100);
         winWidth1 = true;
         winWidth2 = false;
         winWidth3 = false;
@@ -108,8 +116,10 @@ $(document).ready(function(){
         if(slider1 !== undefined && slider2 !== undefined){
           slider1.destroySlider();
           slider2.destroySlider();
-        } 
-        sliders(2, 1);
+        }
+        setTimeout(function(){
+          sliders(2, 1);
+        }, 100);
         winWidth1 = false;
         winWidth2 = true;
         winWidth3 = false;
@@ -117,8 +127,10 @@ $(document).ready(function(){
         if(slider1 !== undefined && slider2 !== undefined){
           slider1.destroySlider();
           slider2.destroySlider();
-        } 
-        sliders(1, 1);
+        }
+        setTimeout(function(){
+          sliders(1, 1);
+        }, 100);
         winWidth1 = false;
         winWidth2 = false;
         winWidth3 = true;
@@ -154,11 +166,8 @@ $(document).ready(function(){
           if(topSec < winScroll && botSec > winScroll){
             var secId = $this.data('section'),
               activLink = $('.nav_link_this').filter('[href="#' + secId + '"]');
-            activLink.addClass('active')
-            .closest('li')
-            .siblings()
-            .find('.nav_link_this')
-            .removeClass('active');
+            $('.nav_link_this').removeClass('active');
+            activLink.addClass('active');
             window.location.hash = secId;
             if(secId === 'creating' && !$this.hasClass('viewed')){
               $this.addClass('viewed');
@@ -209,41 +218,65 @@ $(document).ready(function(){
   var maskPhone = (function(){
    $(".mask-phone").mask("+7(999)-999-99-99");
   }())
+  //скрол наверх
+  var topScrol = (function(){
+      var btn = $('.scroll-top');
+      btn.on('click', function(){
+          $('body, html').animate({'scrollTop' : 0}, 800);
+
+      });
+      $(document).scroll(function(){
+          var topPos = $(window).scrollTop(),
+              face = $('.face').height() + 100,
+              header = $('header');
+          if(topPos > 300){
+            header.addClass('fixed');
+          } else {
+            header.removeClass('fixed')
+          }
+          if(topPos > face ){
+              btn.addClass('active');
+          } else {
+              btn.removeClass('active');
+          }
+      })
+  }())
+
+  ymaps.ready(function () {
+      var myMap = new ymaps.Map('maps', {
+              center: [55.999986534878296,37.22720134400442],
+              zoom: 16,
+              controls: ['zoomControl', 'searchControl', 'typeSelector',  'fullscreenControl']
+          }, {
+              searchControlProvider: 'yandex#search'
+          }),
+          myPlacemark = new ymaps.Placemark([55.999153868752195,37.223839091957075], {
+              hintContent: '',
+              balloonContent: 'Это красивая метка',
+              balloonContentBody: [
+          '<ul>',
+          '<li>',
+          'Москва, г. Зеленоград,',
+          '<br>',
+          'ул. Юности, д.8, офис. 502 и 503.',
+          '</li>',
+          '<li>',
+          '<a href="tel:+74955437653">8 (495) 543-76-53</a>',
+          '</li>',
+          '<li>',
+          '<a href="mailto:info@redsyndicate.ru">info@redsyndicate.ru</a>',
+          '</li>',
+          '</ul>'
+              ].join('')
+          },
+          {
+              iconLayout: 'default#image',
+              iconImageHref: 'img/map-label.png',
+              iconImageSize: [209, 195],
+              iconImageOffset: [7, -184]
+          });
+      myMap.behaviors.disable('scrollZoom');
+      myMap.geoObjects.add(myPlacemark);
+  });
+
 })
-
-ymaps.ready(function () {
-    var myMap = new ymaps.Map('map', {
-            center: [55.999986534878296,37.22720134400442],
-            zoom: 16,
-            controls: ['zoomControl', 'searchControl', 'typeSelector',  'fullscreenControl']
-        }, {
-            searchControlProvider: 'yandex#search'
-        }),
-        myPlacemark = new ymaps.Placemark([55.999153868752195,37.223839091957075], {
-            hintContent: '',
-            balloonContent: 'Это красивая метка',
-            balloonContentBody: [
-        '<ul>',
-        '<li>',
-        'Москва, г. Зеленоград,',
-        '<br>',
-        'ул. Юности, д.8, офис. 502 и 503.',
-        '</li>',
-        '<li>',
-        '<a href="tel:+74955437653">8 (495) 543-76-53</a>',
-        '</li>',
-        '<li>',
-        '<a href="mailto:info@redsyndicate.ru">info@redsyndicate.ru</a>',
-        '</li>',
-        '</ul>'
-            ].join('')
-        },
-        {
-            iconLayout: 'default#image',
-            iconImageHref: 'img/map-label.png',
-            iconImageSize: [209, 195],
-            iconImageOffset: [7, -184]
-        });
-
-    myMap.geoObjects.add(myPlacemark);
-});

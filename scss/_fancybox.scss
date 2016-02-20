@@ -100,10 +100,10 @@
 .fancybox-close {
 	position: absolute;
 	background: 0 0;
-	top: -42px;
+	top: -47px;
 	right: 0px;
-	width: 32px;
-	height: 32px;
+	width: 42px;
+	height: 42px;
 	cursor: pointer;
 	z-index: 8040;
 	background: 0 0!important;
@@ -113,7 +113,7 @@
 		position: absolute;
 		display: block;
 		width: 1px;
-		height: 32px;
+		height: 42px;
 		background: #fff;
 		transform: rotate(45deg) translateX(-50%);
 		left: 50%;
@@ -125,7 +125,7 @@
 		position: absolute;
 		display: block;
 		width: 1px;
-		height: 32px;
+		height: 42px;
 		background: #fff;
 		transform: rotate(-45deg) translateX(-50%);
 		left: 50%;

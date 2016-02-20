@@ -5,7 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Red Syndicate</title>
 	<link rel="stylesheet" href="css/style.css">
-	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<link rel="stylesheet" href="css/jquery.custom-scrollbar.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/parsley.min.js"></script>
 	<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
 	<script src="js/jquery.fancybox.pack.js"></script>
@@ -22,10 +23,10 @@
 	<script src="js/IE9.js"></script>
 	<![endif]-->
 </head>
-<body>
+<body class='body'>
+	<a href="#"><img src="img/logo.jpg" alt="" class="main-logo"></a>
 	<header>
 		<div class="container header__container clearfix">
-			<a href="#"><img src="img/logo.jpg" alt="" class="header__logo"></a>
 			<a href='tel:+74954569835' class="header__phone">+7(495) 456 98 35</a>
 			<button class="burger"></button>
 			<div class="nav">
@@ -36,11 +37,12 @@
 					<li><a href="#" class='nav__link'>Команда</a></li>
 					<li><a href="#" class='nav__link'>Вопросы и ответы</a></li>
 					<li><a href="#" class='nav__link'>Блог</a></li>
-					<li><a href="#contacts" class='nav__link nav_link_this'>Контакты</a></li>
+					<li><a href="#map" class='nav__link nav_link_this'>Контакты</a></li>
 					<!-- класс nav_link_this для ссылок ведущих на секции данной страницы -->
 				</ul>
 				<a href='#message' class="message nav__message open-popup"></a>
 			</div>
+			<a href='#message' class="message sm_message open-popup"></a>
 		</div>
 	</header>
 	<main>
@@ -50,7 +52,7 @@
 					<a href="#message" class="btn waves-effect waves-button open-popup">Заказать</a>
 				</div>
 				<div class="face__phone animated delay-03">
-					<img src="img/phone.png" width="271" height="563" alt="">
+					<img src="img/phone-2.png" width="271" height="563" alt="">
 				</div>
 				<div class="direction">
 					<img src="img/logo-2.png" alt="" class="logo-2 animated fadeIn">
@@ -60,10 +62,10 @@
 						с максимальной конверсией под цели Вашего бизнеса.
 					</h1>
 					<p class='direction__text animated fadeIn delay-06'>
-						Мы знаем, что Вам нужно. <br>Закажите сайт по инновационной технологии!
+						Закажите адаптивный сайт с уникальным дизайном.
 					</p>
 					<p class="direction__text blue animated fadeIn delay-06">
-						Чёткие сроки и фиксированная стоимость!
+						Гарантируем чёткие сроки и фиксированную стоимость!
 					</p>
 					<div class='direction__wrap-btn colored-button animated fadeIn delay-09 hidden-xs'>
 						<a href="#message" class="btn waves-effect waves-button open-popup">Заказать</a>
@@ -79,7 +81,7 @@
 					<div class="slider">
 						<div class="slide slider__slide">
 							<div class="slide__left">
-								<img src="img/slide-2.png" alt="" class="slider__img">
+								<img src="img/slide-1.png" alt="" class="slider__img">
 							</div>
 							<div class="slide__right">
 								<h3 class='slide__title'>
@@ -92,11 +94,11 @@
 						</div>
 						<div class="slide slider__slide">
 							<div class="slide__left">
-								<img src="img/slide.png" alt="" class="slider__img">
+								<img src="img/slide-2.png" alt="" class="slider__img">
 							</div>
 							<div class="slide__right">
 								<h3 class='slide__title'>
-									Гарантия быстрого запуска.
+									Гарантия быстрого запуска
 								</h3>
 								<div class="slide__text">
 									Мы гарантируем разработку интернет-магазина за 3 месяца, т.к. понимаем, как сроки влияют на Вашу прибыль.
@@ -105,11 +107,11 @@
 						</div>
 						<div class="slide slider__slide">
 							<div class="slide__left">
-								<img src="img/slide.png" alt="" class="slider__img">
+								<img src="img/slide-3.png" alt="" class="slider__img">
 							</div>
 							<div class="slide__right">
 								<h3 class='slide__title'>
-									100% качества. 
+									100% качества
 								</h3>
 								<div class="slide__text">
 									Профессиональное тестирование проекта и гарантийная поддержка в течение целого года после запуска.
@@ -118,11 +120,12 @@
 						</div>
 						<div class="slide slider__slide">
 							<div class="slide__left">
-								<img src="img/slide.png" alt="" class="slider__img">
+								<img src="img/slide-4.png" alt="" class="slider__img">
 							</div>
 							<div class="slide__right">
 								<h3 class='slide__title'>
-									Интернет-магазин 	легко поддерживать 		и развивать.
+									Легкая поддержка 
+									и развитие интернет-магазина 
 								</h3>
 								<div class="slide__text">
 									Каждый проект проходит контроль соответствия стандартам 					и сопровождается полной технической 		и эксплуатационной документацией.
@@ -149,7 +152,7 @@
 		<div class="section benefit" data-section='benefit'>
 			<div class="benefit__container">
 				<div class="benefit__left hidden-sm">
-					<img src="img/benefit-img.png" alt="" class='benefit__img'>
+					<img src="img/benefit-img-2.png" alt="" class='benefit__img'>
 				</div>
 				<div class="benefit__right">
 					<h2 class="title">Вы получаете:</h2>
@@ -232,7 +235,7 @@
 					</div>
 					<div class="guarantee__item">
 						<div class="guarantee__name">
-							Гарантиявозврата денег  за непринятый этап
+							Гарантия возврата денег  за непринятый этап
 						</div>
 						<p class="guarantee__text text">
 							Вы всегда можете вернуть деньги за еще не принятый этап. Мы берем 100% предоплату за каждый этап, но пока работы не выполнены, Вы можете в любой момент забрать деньги.
@@ -252,7 +255,7 @@
 						<div class="job__text">
 							Проводим с Вами интервью  и заполняем Бриф
 						</div>
-						<div class="job__count">(5 дней)</div>
+						<div class="job__count">(2 дня)</div>
 					</div>
 				</div>
 				<div class="slide job__slide">
@@ -262,7 +265,7 @@
 						<div class="job__text">
 							Чтобы познакомиться лично и обсудить проект. На основании брифа мы предложим Вам оптимальную схему разработки проекта.
 						</div>
-						<div class="job__count">(5 дней)</div>
+						<div class="job__count">(1 день)</div>
 					</div>
 				</div>
 				<div class="slide job__slide">
@@ -270,7 +273,7 @@
 					<div class="job__content">
 						<div class="job__name">Создаем интерактивный  прототип</div>
 						<div class="job__text">
-							Чтобы познакомиться лично и обсудить проект. На основании брифа мы предложим Вам оптимальную схему разработки проекта.
+							В котором будет отражена структура проекта и заложенный функционал.
 						</div>
 						<div class="job__count">(5 дней)</div>
 					</div>
@@ -279,30 +282,32 @@
 					<div class="job__number">04</div>
 					<div class="job__content">
 						<div class="job__name">Создаем дизайн-макеты и верстку</div>
-						<div class="job__text">
-							Чтобы познакомиться лично и обсудить проект. На основании брифа мы предложим Вам оптимальную схему разработки проекта.
-						</div>
+						<div class="job__text"></div>
+						<div class="job__count">(15 дней)</div>
+					</div>
+				</div>
+				<div class="slide job__slide">
+					<div class="job__number">05</div>
+					<div class="job__content">
+						<div class="job__name">Программируем</div>
+						<div class="job__text"></div>
+						<div class="job__count">(30 дней)</div>
+					</div>
+				</div>
+				<div class="slide job__slide">
+					<div class="job__number">06</div>
+					<div class="job__content">
+						<div class="job__name">Заполняем первичным контентом</div>
+						<div class="job__text"></div>
 						<div class="job__count">(5 дней)</div>
 					</div>
 				</div>
 				<div class="slide job__slide">
-					<div class="job__number">04</div>
+					<div class="job__number">07</div>
 					<div class="job__content">
-						<div class="job__name">Создаем дизайн-макеты и верстку</div>
-						<div class="job__text">
-							Чтобы познакомиться лично и обсудить проект. На основании брифа мы предложим Вам оптимальную схему разработки проекта.
-						</div>
-						<div class="job__count">(5 дней)</div>
-					</div>
-				</div>
-				<div class="slide job__slide">
-					<div class="job__number">04</div>
-					<div class="job__content">
-						<div class="job__name">Создаем дизайн-макеты и верстку</div>
-						<div class="job__text">
-							Чтобы познакомиться лично и обсудить проект. На основании брифа мы предложим Вам оптимальную схему разработки проекта.
-						</div>
-						<div class="job__count">(5 дней)</div>
+						<div class="job__name">Даем рекомендации по развитию проекта</div>
+						<div class="job__text"></div>
+						<div class="job__count">(2 дня)</div>
 					</div>
 				</div>
 			</div>
@@ -321,7 +326,8 @@
 							на 1 год и возможностью продления.</span>
 					</p>
 					<p class="text job__right">
-						Каждому проекту выделяется персональный менеджер, который контролирует все процессы разработки.
+						Каждому проекту выделяется персональный менеджер, который контролирует все процессы разработки. <br>
+						<a href="#" class='link-style job_link_style'><span>Наша команда</span></a>
 					</p>
 				</div>
 			</div>
@@ -389,13 +395,11 @@
 			<div class="next-section"></div>
 		</div>
 		<div class="section map" data-section='map'>
-			<div id="map"></div>
+			<h2 class="title map__title">Контакты</h2>
+			<div id="maps"></div>
 			<div class="balloon">
 				<div class="balloon__adr">
 					Москва, г. Зеленоград,  ул. Юности, д.8, офис. 502 и 503.
-				</div>
-				<div>
-					
 				</div>
 				<a href="tel:+74955437653" class="balloon__phone">8 (495) 543-76-53</a>
 				<a href="mailto:info@redsyndicate.ru" class="balloon__email">info@redsyndicate.ru</a>
@@ -436,38 +440,42 @@
 		</div>
 	</footer>
 	<div class="popup" id='message'>
-		<h2 class="popup__tetle">Заголовок</h2>
+		<h2 class="popup__tetle">Запросить коммерческое предложение</h2>
 		<form   action=""
 				role="form"
 				data-parsley-validate 
-				data-parsley-required-message="Поле обязательно для заполнения">
+				data-parsley-required-message="Поле обязательно для заполнения"
+				id="order_form"
+				onsubmit="return sendAjaxMail();"
+				>
 			<div class="popup__content">
 				<div class="popup__left">
 					<div class="wrap-control">
-						<input type="text" class="form-control" placeholder="Ваше имя" data-parsley-required>
+						<input type="text" class="form-control" placeholder="Ваше имя*" data-parsley-required>
 					</div>
 					<div class="wrap-control">
-						<input type="text" class="form-control mask-phone" placeholder="Телефон" data-parsley-required>
+						<input type="text" class="form-control mask-phone" placeholder="Телефон">
 					</div>
 					<div class="wrap-control">
 						<input type="email"
 								class="form-control"
-								placeholder="Email"
+								placeholder="Email*"
 								data-parsley-type="email"
 								data-parsley-type-message="Email введен не корректно"
 								data-parsley-required>
 					</div>
 				</div>
 				<div class="popup__right">
-					<textarea name="" class="popup__textarea" placeholder='Ваше сообщение'></textarea>
+					<textarea name="" class="popup__textarea" placeholder='Расскажите кратко о Вашем проекте'></textarea>
 				</div>
 			</div>
 			<div class='colored-button'>
-				<button type='submit' class="btn waves-effect waves-button">Отправить</button>
+				<button type='submit' class="btn waves-effect waves-button"><span>Отправить</span></button>
 			</div>
 		</form>
 	</div>
 	<a href='#message' class="message open-popup"></a>
+	<div class="scroll-top"></div>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

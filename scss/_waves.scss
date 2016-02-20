@@ -86,7 +86,7 @@
   background-color: #e61e38;
   font-size: 22px;
   height: 60px;
-  line-height: 60px;
+  line-height: 56px;
   border-radius: 60px;
   text-align: center;
   text-decoration: none;
@@ -97,6 +97,10 @@
 .waves-button {
   padding: 0 50px;
   border-radius: 60px;
+  span{
+    position: relative;
+    top: -3px;
+  }
 }
 .waves-button:hover{
   background-color: #ba1026;

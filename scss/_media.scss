@@ -7,8 +7,16 @@
 		padding-left: 15px;
 		padding-right: 15px;
 	}
+	.map{
+		padding-left: 0;
+		padding-right: 0;
+	}
 	.direction__title{
 		margin-right: 0px;
+	}
+	.job{
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 @media screen and($md){
@@ -18,9 +26,10 @@
 	.header__phone{
 		margin-right: 10px;
 	}
-	.header__logo{
+	.main-logo{
 		right: auto;
 		left: 2px;
+		margin-left: 0;
 		max-width: 70px;
 	}
 	.face__phone{
@@ -72,6 +81,9 @@
 	.balloon{
 		right: 5%;
 	}
+	.scroll-top{
+		right: 15px;
+	}
 }
 @media screen and($sm){
 	.section{
@@ -88,6 +100,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
+		position: relative;
 	}
 	.nav{
 		padding: 10px 10px 0 30px;
@@ -169,7 +182,11 @@
 		padding: 50px 15px;
 	}
 	.creating{
-		padding: 50px 15px;
+		padding: 50px 0px;
+	}
+	.creating__container{
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 	.creating__img{
 		max-width: 380px;
@@ -204,6 +221,10 @@
 	.job__content{
 		padding: 0 25px;
 		top: 320px;
+	}
+	.job__more{
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 	.job__more .container-big{
 		flex-direction: column-reverse;
@@ -255,6 +276,12 @@
 	.reviews__controls{
 		margin-top: 0;
 	}
+	.scroll-top{
+		display: none;
+	}
+	#maps{
+		height: 300px;
+	}
 }
 @media screen and($xs){
 	.visible-xs{
@@ -302,6 +329,9 @@
 	}
 	.nav.active{
 		transform: translateX(0);
+		overflow-y: auto;
+		padding-bottom: 30px;
+		z-index: 100;
 	}
 	.nav__close{
 		display: block;
@@ -318,6 +348,22 @@
 		bottom: 0;
 		left: 0;
 	}
+	.fixed .sm_message{
+		position: absolute;
+		top: -6px;
+		left: 13px;
+		width: 30px;
+		height: 30px;
+		display: block;
+		box-shadow: 0 0 0 5px rgba(230, 30, 56, 0.3);
+		&:after{
+			width: 18px;
+			height: 12px;
+			background-size: contain;
+			margin-top: -6px;
+			margin-left: -9px;
+		}
+	}
 	.face__container{
 		flex-direction: column-reverse;
 		justify-content: center;
@@ -333,11 +379,9 @@
 		display: none;
 	}
 	.face__phone{
-		//display: none;
 		text-align: center;
 		margin-right: 0;
 		position: relative;
-		left: -10px;
 	}
 	.direction__wrap-btn{
 		text-align: center;
@@ -402,6 +446,9 @@
 	}
 	.creating__link{
 		display: none;
+	}
+	.benefit__right{
+		display: block;
 	}
 	.offer{
 		background: 0 0;
@@ -552,7 +599,7 @@
 		margin-bottom: 25px;
 	}
 	.popup__content{
-		flex-direction: column;
+		display: block;
 	}
 	.popup__left{
 		padding-right: 0;
@@ -560,5 +607,12 @@
 	.popup__textarea{
 		padding: 12px;
 		min-height: 90px;
+	}
+	.popup__tetle{
+		font-size: 30px;
+		line-height: 30px;
+	}
+	.popup{
+		padding: 15px 15px 50px 15px;
 	}
 }
